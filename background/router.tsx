@@ -9,30 +9,14 @@ interface _MenuObject extends Record<string, any> {
 export type MenuObject = RouteObject & _MenuObject
 
 const list = [
-	'field'
-	// 'button',
-	// 'virtualList',
-	// 'input',
-	// 'detail',
-	// 'progress',
-	// 'select',
-	// 'richText',
-	// 'textarea',
-	// 'dialog',
-	// 'form',
-	// 'table',
-	// 'paging',
-	// 'layout',
-	// 'card',
-	// 'test'
-	// 'markdown',
+	'field',
+	'object',
+	'array'
 ].map(name => {
 	return {
 		name,
 		path: '/' + name,
 		element: <Suspense fallback={<div>Loading</div>}>
-
-			{/* {React.createElement(lazy(() => import(`../src/${name}/__test__`)))} */}
 			{React.createElement(lazy(() =>
 				import(name === 'test' ? `../src/${name}` : `../src/${name}/demo`))
 			)}
