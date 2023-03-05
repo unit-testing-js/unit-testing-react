@@ -7,6 +7,12 @@ export default function () {
 		<Unit>
 			<ArrayField
 				name="obj"
+				defaultValue={[
+					'1', 'b', 'c', {
+						d: 1,
+						e: '3'
+					}
+				]}
 				fields={[
 					{ name: 'a' },
 					{ name: 'b' },

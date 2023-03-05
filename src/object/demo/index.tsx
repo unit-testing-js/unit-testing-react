@@ -7,6 +7,11 @@ export default function () {
 		<Unit>
 			<ObjectField
 				name="obj"
+				defaultValue={{
+					a: 'a',
+					b: 'b',
+					c: 'c'
+				}}
 				fields={[
 					{ name: 'a' },
 					{ name: 'b' },

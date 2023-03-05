@@ -75,6 +75,7 @@ export function ObjectField(props: ObjectField) {
 					key: name,
 					label: name,
 					name,
+					defaultValue: name && field[name],
 					...rest
 				}
 

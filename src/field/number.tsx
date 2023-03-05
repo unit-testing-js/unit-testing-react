@@ -12,10 +12,10 @@ export interface NumberField extends UnknownField {
 export function NumberField(props: NumberField) {
 	const {
 		fieldLabel = 'Click',
-		label, defaultValue = 0, onClick, onChange,
+		label, defaultValue, onClick, onChange,
 		record, name, mode = 'block', ...rest
 	} = props
-	const [field, setField] = useState<number>(defaultValue)
+	const [field, setField] = useState<number | undefined>(defaultValue)
 	const [result, setResult] = useState<unknown>()
 
 	useEffect(() => {
@@ -58,7 +58,7 @@ export function NumberField(props: NumberField) {
 
 				<FieldResultType result={result} />
 			</span>
-			
+
 		</React.Fragment>
 
 	return {

@@ -56,6 +56,7 @@ export function ArrayField(props: ArrayField) {
 					key: name,
 					label: index,
 					name: index.toString(),
+					defaultValue: field[index],
 					...rest,
 				}
 
