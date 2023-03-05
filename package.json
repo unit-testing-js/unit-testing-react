@@ -1,6 +1,6 @@
 {
   "name": "unit-testing-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "module": "dist/index.umd.js",
   "main": "dist/index.umd.js",
@@ -37,6 +37,7 @@
     "@typescript-eslint/parser": "^5.40.1",
     "abandonjs": "^2.5.5",
     "babel-loader": "^8.2.5",
+    "browser-helper-js": "^0.0.2",
     "check-it-type": "^0.4.2",
     "clean-webpack-plugin": "^4.0.0",
     "commitlint": "^17.1.2",
@@ -45,6 +46,7 @@
     "esbuild-loader": "^2.20.0",
     "eslint": "^8.25.0",
     "eslint-webpack-plugin": "^3.2.0",
+    "fakingjs": "^0.1.1",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "less": "^4.1.3",

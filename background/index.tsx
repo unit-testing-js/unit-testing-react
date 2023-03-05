@@ -1,57 +1,35 @@
-/* eslint-disable*/
-import React, { Suspense, useState, useEffect } from "react"
+import React, { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, useNavigate, useRoutes } from 'react-router-dom'
-import { routers, menu, MenuObject } from './router'
-import './index.less'
-import '../src/index.less'
+import { BrowserRouter } from 'react-router-dom'
+import { MainContainer, MenuObject } from '../src'
 
-function App() {
-	const element = useRoutes(routers)
-	const [select, setSelect] = useState<string>('')
-	const nav = useNavigate()
+const menu: MenuObject[] = [
+	{
+		path: '/',
+		element: <div />
+	},
+].concat([
+	'field',
+	'object',
+	'array',
+	'layout'
+].map(name => {
+	return {
+		name,
+		path: '/' + name,
+		element: <Suspense fallback={<div>Loading</div>}>
+			{React.createElement(lazy(() =>
+				import(name === 'test' ? `../src/${name}` : `../src/${name}/demo`))
+			)}
+		</Suspense>
+	}
+}))
 
-	useEffect(() => {
-		const names = /(\w+)$/.exec(location.href)
-		if (names && names.length) {
-			setSelect(names[0])
-		}
-	}, [])
-
-	return (<div className="main">
-		{/* <div className="header">
-			
-		</div> */}
-		<aside className="menu">
-			{menu.map((item: MenuObject) => {
-				const { name, path } = item
-				if (path && path !== '/')
-					return <div
-						className={select === name ? 'isSelect' : ''}
-						key={name + path}
-						onClick={() => {
-							nav(path)
-							name && setSelect(name)
-						}} >
-						{name || path.replace('/', '')}
-					</div>
-
-			})}
-		</aside>
-		<div className="docs-component-content">
-			<Suspense fallback={<div>loading...</div>}>
-				<div>{element}</div>
-			</Suspense>
-		</div>
-	</div>
-	)
-}
-
-const container = document.getElementById('root');
-const root = createRoot(container!);
-
-root.render(
-	<BrowserRouter basename="/">
-		<App />
-	</BrowserRouter>
-);
+createRoot(document.getElementById('root')!)
+	.render(
+		<BrowserRouter basename="/">
+			<MainContainer
+				menu={menu}
+			/>
+		</BrowserRouter>
+	);

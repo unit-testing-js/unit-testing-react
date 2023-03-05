@@ -1,19 +1,23 @@
-import React, { CSSProperties } from 'react'
-
-interface CMM {
-	style?: CSSProperties
-	className?: string
-	children?: any
-	[key: string]: any
-}
+import React from 'react'
+import { classNames } from 'browser-helper-js'
+import type { CMM } from './type'
+import './index.less'
 
 export interface Container extends CMM {
-	count?: number
+	columns?: number
+	gap?: number | string
 }
 
 export function Container(props: Container) {
-	const { children, ...rest } = props
-	return <div {...rest}>
+	const { className, columns = 2, gap = 5, style, children, ...rest } = props
+	return <div
+		className={classNames('unit-testing-container', className)}
+		style={{
+			columnCount: columns,
+			columnGap: gap,
+			...style
+		}}
+		{...rest}>
 		{children}
 	</div>
 }
@@ -23,8 +27,11 @@ export interface Unit extends CMM {
 }
 
 export function Unit(props: Unit) {
-	const { children, ...rest } = props
-	return <div {...rest}>
+	const { title, className, children, ...rest } = props
+	return <div
+		className={classNames('unit-testing-unit', className)}
+		{...rest}>
+		{title && <h2>{title}</h2>}
 		{children}
 	</div>
 }
