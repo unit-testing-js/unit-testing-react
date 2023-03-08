@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
 import { MainContainer, MenuObject } from '../src'
 
 const menu: MenuObject[] = [
@@ -27,7 +26,6 @@ const menu: MenuObject[] = [
 
 createRoot(document.getElementById('root')!)
 	.render(
-		<BrowserRouter basename="/">
+		
 			<MainContainer menu={menu} />
-		</BrowserRouter>
 	);
