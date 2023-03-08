@@ -1,5 +1,5 @@
-import React, { Suspense, useState, useEffect } from "react"
-import { useNavigate, useRoutes } from 'react-router-dom'
+import React, { useState, useEffect } from "react"
+import { useNavigate, Routes, Route } from 'react-router-dom'
 import type { CMM, MenuObject } from './type'
 import './index.less'
 
@@ -9,7 +9,6 @@ export interface MainContainer extends CMM {
 
 export function MainContainer(props: MainContainer) {
 	const { menu = [] } = props
-	const element = useRoutes(Array.from(menu, (item) => ({ path: item.path, element: item.element })))
 	const [select, setSelect] = useState<string>('')
 	const nav = useNavigate()
 
@@ -38,9 +37,9 @@ export function MainContainer(props: MainContainer) {
 			})}
 		</aside>
 		<div className="docs-component-content">
-			<Suspense fallback={<div>loading...</div>}>
-				<div>{element}</div>
-			</Suspense>
+			<Routes>
+				{menu.map(router => (<Route path={router.path} element={router.element} />))}
+			</Routes>
 		</div>
 	</div>
 	)

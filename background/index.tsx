@@ -28,8 +28,6 @@ const menu: MenuObject[] = [
 createRoot(document.getElementById('root')!)
 	.render(
 		<BrowserRouter basename="/">
-			<MainContainer
-				menu={menu}
-			/>
+			<MainContainer menu={menu} />
 		</BrowserRouter>
 	);
