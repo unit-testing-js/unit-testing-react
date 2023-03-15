@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { Routes, Route, Link, BrowserRouter } from 'react-router-dom'
+import { isUndefined } from "check-it-type"
+import { classNames } from 'browser-helper-js'
 import type { CMM, MenuObject } from './type'
 import { getIcon } from './icon'
 import './index.less'
-import { isUndefined } from "check-it-type"
 export interface MainContainer extends CMM {
 	menu: MenuObject[]
 	/**
@@ -17,22 +18,15 @@ export function MainContainer(props: MainContainer) {
 	const [select, setSelect] = useState<string>('')
 	const [fold, setFold] = useState<boolean>(isUndefined(props.fold) ? true : props.fold)
 
-
 	useEffect(() => {
 		const names = /(\w+)$/.exec(location.href)
-		if (names && names.length) {
-			setSelect(names[0])
-		}
+		if (names && names.length) setSelect(names[0])
 	}, [])
 
 	return (
 		<BrowserRouter basename="/">
 			<div
-				className="main"
-				style={{
-					gridTemplateColumns: fold ? '60px 1fr' : '10vw 1fr',
-					transition: 'all .2s ease-in-out',
-				}}>
+				className={classNames("main", { fold })}>
 				<aside className="menu">
 					{menu.map((item: MenuObject) => {
 						const { name, path } = item
@@ -41,12 +35,10 @@ export function MainContainer(props: MainContainer) {
 							const showName = fold ? (_name[0]) : (_name)
 							return <Link
 								to={path}
-								className={select === name ? 'isSelect' : ''}
-								style={fold ? {
-									textAlign: 'center',
-									fontSize: '18px',
-									fontWeight: 'bold',
-								} : {}}
+								className={classNames({
+									isSelect: select === name,
+									fold,
+								})}
 								title={name}
 								key={name + path}
 								onClick={() => {
@@ -58,7 +50,7 @@ export function MainContainer(props: MainContainer) {
 					})}
 				</aside>
 				<div className="docs-component-content">
-					<div className="header">
+					<div className={classNames("header", { fold })}>
 						<button
 							onClick={() => {
 								setFold(!fold)

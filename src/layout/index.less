@@ -58,13 +58,6 @@ body {
   background-color: #111111;
 }
 
-.main {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  // grid-template-columns: 10vw 1fr;
-  gap: 0;
-}
-
 .scrollbar() {
 
   /* 滚动条整体 */
@@ -93,20 +86,26 @@ body {
   }
 }
 
+.main {
+  display: grid;
+  gap: 0;
+  grid-template-columns: 10vw 1fr;
+  transition: all .2s ease-in-out;
+
+  &.fold {
+    grid-template-columns: 60px 1fr;
+  }
+}
+
 aside.menu {
   display: block;
   box-sizing: border-box;
   min-height: 100vh;
   padding: 5px;
-  padding-top: 15px;
+  padding-top: 10px;
   color: #c5c5c5;
   height: 100vh;
   overflow-y: auto;
-
-  // &,
-  // & * {
-  //   transition: all 5s ease-in-out;
-  // }
 
   .scrollbar();
 
@@ -126,6 +125,13 @@ aside.menu {
     text-overflow: ellipsis;
     font-weight: bold;
     font-size: small;
+    transition: all .2s ease-in-out;
+
+    &.fold {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+    }
 
     &.isSelect,
     &:hover {
@@ -136,17 +142,30 @@ aside.menu {
   }
 }
 
-
-
-
 .docs-component-content {
-  padding: 5px 10px;
   height: 100vh;
   overflow-y: auto;
-
+  width: 100%;
+  margin-top: 60px;
   .scrollbar();
 
   .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-left: 10vw;
+    transition: all .2s ease-in-out;
+    background-color: #111;
+
+    &.fold {
+      margin-left: 60px;
+    }
+
+    // margin: auto 0;
+    // width: fit-content;
+    // background-color: #9afc8d;
+
     &>button {
       display: flex;
       justify-content: center;
