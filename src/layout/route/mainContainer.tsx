@@ -1,4 +1,3 @@
-/* eslint-disable*/
 import React from "react"
 import { isArray } from "check-it-type"
 import { BrowserRouter, Routes, Route, RouteProps } from 'react-router-dom'
