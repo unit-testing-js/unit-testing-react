@@ -1,3 +1,4 @@
 export * from './container'
-export * from './mainContainer'
+export * from './route'
 export * from './type'
+import './base.less'

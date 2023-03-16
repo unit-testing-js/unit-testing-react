@@ -1,7 +1,7 @@
 import React from 'react'
 import { classNames } from 'browser-helper-js'
 import type { CMM } from './type'
-import './index.less'
+import './container.less'
 
 export interface Container extends CMM {
 	columns?: number
