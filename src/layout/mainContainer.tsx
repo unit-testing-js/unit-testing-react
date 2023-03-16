@@ -8,13 +8,19 @@ import './index.less'
 export interface MainContainer extends CMM {
 	menu: MenuObject[]
 	/**
+	 * @default '/'
+	 */
+	basename?: string
+	location?: Partial<Location> | string;
+	window?: Window
+	/**
 	 * @default true
 	 */
 	fold?: boolean
 }
 
 export function MainContainer(props: MainContainer) {
-	const { menu = [] } = props
+	const { menu = [], basename = '/', window } = props
 	const [select, setSelect] = useState<string>('')
 	const [fold, setFold] = useState<boolean>(isUndefined(props.fold) ? true : props.fold)
 
@@ -24,7 +30,9 @@ export function MainContainer(props: MainContainer) {
 	}, [])
 
 	return (
-		<BrowserRouter basename="/">
+		<BrowserRouter
+			basename={basename}
+			window={window} >
 			<div
 				className={classNames("main", { fold })}>
 				<aside className="menu">
@@ -58,7 +66,7 @@ export function MainContainer(props: MainContainer) {
 							{getIcon(fold ? 'fold' : 'unFold', 32, '#c5c5c5')}
 						</button>
 					</div>
-					<Routes>
+					<Routes location={props.location}>
 						{menu.map(router => (<Route
 							key={router.path}
 							path={router.path}

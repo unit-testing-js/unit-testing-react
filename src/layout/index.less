@@ -125,7 +125,8 @@ aside.menu {
     text-overflow: ellipsis;
     font-weight: bold;
     font-size: small;
-    transition: all .2s ease-in-out;
+    transition: all .6s ease-in-out;
+    transition: color, background .3s ease-in-out;
 
     &.fold {
       text-align: center;
@@ -136,7 +137,7 @@ aside.menu {
     &.isSelect,
     &:hover {
       color: #9afc8d;
-      background-color: #1f1f1f;
+      background: #1f1f1f;
     }
 
   }
@@ -161,10 +162,6 @@ aside.menu {
     &.fold {
       margin-left: 60px;
     }
-
-    // margin: auto 0;
-    // width: fit-content;
-    // background-color: #9afc8d;
 
     &>button {
       display: flex;
