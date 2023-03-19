@@ -7,16 +7,16 @@ const path = require('path')
 require('./env/tsconfig/index')('dev')
 
 const devServer = {
-	port: '3300', //默认是8080
+	port: '3340', //默认是8080
 	// client: { logging: "error" },//浏览器中设置日志级别
 	compress: true, //是否启用 gzip 压缩
 	open: false,
 	// https: true,
 	historyApiFallback: true,
 	watchFiles: ['src/**/*', 'public/**/*'],
-	proxy: {
-		'/vr/': 'http://localhost:13000/'
-	},
+	// proxy: {
+	// 	'/vr/': 'http://localhost:13000/'
+	// },
 };
 
 const devConfig = {
