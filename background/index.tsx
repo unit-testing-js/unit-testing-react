@@ -1,6 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { MainContainer, MenuObject, getTestMenuRoute, lazyLoad } from '../src'
+import './index.less'
 
 const menu: MenuObject[] = [
 	// {

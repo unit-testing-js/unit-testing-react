@@ -56,7 +56,7 @@ export function ObjectField(props: ObjectField) {
 
 	const render = () => <React.Fragment>
 
-		<label>{isEmpty(label) ? '' :
+		<label className='ut-label'>{isEmpty(label) ? '' :
 			<React.Fragment>
 				<span>{label}</span>
 				<span className='colon'>:</span>
