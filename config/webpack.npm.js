@@ -142,14 +142,10 @@ module.exports = {
 			}),
 		],
 	},
-	// externals: {
-	// 	react: 'react',
-	// 	'react-dom': 'react-dom'
-	// },
 	externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
-  },
+		react: "React",
+		"react-dom": "ReactDOM"
+	},
 	plugins: [
 		new CleanWebpackPlugin(),
 		// new miniCSS({

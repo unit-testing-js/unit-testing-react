@@ -10,9 +10,9 @@ export interface StringField extends UnknownField {
 }
 
 export function StringField(props: StringField) {
-	const { 
+	const {
 		label, defaultValue = '', onClick, onChange,
-		record, name, mode = 'block', ...rest 
+		record, name, mode = 'block', ...rest
 	} = props
 	const [field, setField] = useState<string>(defaultValue)
 	const [result, setResult] = useState<unknown>()
@@ -23,7 +23,7 @@ export function StringField(props: StringField) {
 	}, [defaultValue])
 
 	const render = () => <React.Fragment>
-		<label>{isEmpty(label) ? '' :
+		<label className='ut-label'>{isEmpty(label) ? '' :
 			<React.Fragment>
 				<span>{label}</span>
 				<span className='colon'>:</span>
