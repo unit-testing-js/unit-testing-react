@@ -11,6 +11,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.40.1
   '@typescript-eslint/parser': ^5.40.1
   abandonjs: ^2.5.5
+  asura-eye: ^0.5.0
   babel-loader: ^8.2.5
   browser-helper-js: ^0.0.2
   check-it-type: ^0.4.2
@@ -46,6 +47,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-router: 6.4.2_react@18.2.0
+  react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   0hook: 0.0.4_zbur65pq5ttfo7ncb2n2vp2s3m
@@ -58,6 +60,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.40.1_ukgdydjtebaxmxfqp5v5ulh64y
   '@typescript-eslint/parser': 5.40.1_z4bbprzjrhnsfa24uvmcbu7f5q
   abandonjs: 2.5.5
+  asura-eye: 0.5.0
   babel-loader: 8.2.5_wfdvla2jorjoj23kkavho2upde
   browser-helper-js: 0.0.2
   check-it-type: 0.4.2
@@ -77,7 +80,6 @@ devDependencies:
   postcss: 8.4.18
   postcss-loader: 7.0.1_igyeriywjd4lwzfk4socqbj2qi
   react-markdown: 8.0.5_iapumuv4e6jcjznwuxpf4tt22e
-  react-router-dom: 6.4.2_biqbaboplfbrettd7655fr4n2y
   style-loader: 3.3.1_webpack@5.74.0
   terser-webpack-plugin: 5.3.6_webpack@5.74.0
   ts-loader: 9.4.1_qqxisngxjbp7lstdk7boexbu3e
@@ -655,6 +657,7 @@ packages:
   /@remix-run/router/1.0.2:
     resolution: {integrity: sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ==}
     engines: {node: '>=14'}
+    dev: false
 
   /@tsconfig/node10/1.0.9:
     resolution: {integrity: sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA==}
@@ -1310,6 +1313,11 @@ packages:
   /arrify/1.0.1:
     resolution: {integrity: sha512-3CYzex9M9FGQjCGMGyi6/31c8GJbgb0qGyrx5HWxPd0aCwh4cB2YjMb2Xf9UuoogrMrlO9cTqnB5rI5GHZTcUA==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /asura-eye/0.5.0:
+    resolution: {integrity: sha512-94giiO+hysJOBtNNooXfV2t7S2EUkIPdOvx6QXdyKaT8i396vbEXW1nIOUM4O9dwM1H7/AUCbAoswgWaMk0N0g==}
+    engines: {node: '>=16'}
     dev: true
 
   /babel-loader/8.2.5_wfdvla2jorjoj23kkavho2upde:
@@ -4247,6 +4255,7 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -4294,7 +4303,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-router: 6.4.2_react@18.2.0
-    dev: true
+    dev: false
 
   /react-router/6.4.2_react@18.2.0:
     resolution: {integrity: sha512-Rb0BAX9KHhVzT1OKhMvCDMw776aTYM0DtkxqUBP8dNBom3mPXlfNs76JNGK8wKJ1IZEY1+WGj+cvZxHVk/GiKw==}
@@ -4304,6 +4313,7 @@ packages:
     dependencies:
       '@remix-run/router': 1.0.2
       react: 18.2.0
+    dev: false
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
@@ -4517,6 +4527,7 @@ packages:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
 
   /schema-utils/2.7.1:
     resolution: {integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==}
