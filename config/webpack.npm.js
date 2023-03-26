@@ -130,7 +130,7 @@ module.exports = {
 	},
 	output: {
 		filename: "index.umd.js",
-		library: ['0design'],
+		library: ['unit-testing-react'],
 		// libraryTarget: "esm"
 		libraryTarget: "umd"
 	},
@@ -142,10 +142,14 @@ module.exports = {
 			}),
 		],
 	},
+	// externals: {
+	// 	react: 'react',
+	// 	'react-dom': 'react-dom'
+	// },
 	externals: {
-		react: 'react',
-		'react-dom': 'react-dom'
-	},
+    react: "React",
+    "react-dom": "ReactDOM"
+  },
 	plugins: [
 		new CleanWebpackPlugin(),
 		// new miniCSS({
