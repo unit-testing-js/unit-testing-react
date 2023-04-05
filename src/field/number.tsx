@@ -28,7 +28,7 @@ export function NumberField(props: NumberField) {
 	const render = () =>
 		<React.Fragment>
 
-			<label className='ut ut-label'>{isEmpty(label) ? '' :
+			<label className='ut-label'>{isEmpty(label) ? '' :
 				<React.Fragment>
 					<span>{label}</span>
 					<span className='colon'>:</span>
@@ -36,7 +36,7 @@ export function NumberField(props: NumberField) {
 			}</label>
 
 			<input
-				className='ut'
+				className='ut-input'
 				value={field}
 				onChange={(e) => {
 					let value = Number(e.target.value)
@@ -49,7 +49,7 @@ export function NumberField(props: NumberField) {
 				}}
 			/>
 
-			<span className='ut'>
+			<span className='ut-btn'>
 				<button
 					style={{ display: isEmpty(onClick) ? 'none' : 'inline-block' }}
 					onClick={() => {

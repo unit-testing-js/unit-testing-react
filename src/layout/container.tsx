@@ -18,7 +18,6 @@ export function Container(props: Container) {
 			display: 'grid',
 			gridTemplateColumns: `repeat(${columns}, 1fr)`,
 			gap: isString(gap) ? gap : `0 ${gap}px`
-			// gridTemplateColumns: 're'
 		} : {
 			columnCount: columns,
 			columnGap: gap,
@@ -36,7 +35,7 @@ export interface Unit extends CMM {
 export function Unit(props: Unit) {
 	const { title, className, children, ...rest } = props
 	return <div
-		className={classNames('unit-testing-unit ut', className)}
+		className={classNames('unit-testing-unit', className)}
 		{...rest}>
 		{title && <h2>{title}</h2>}
 		{children}

@@ -30,6 +30,7 @@ export function StringField(props: StringField) {
 			</React.Fragment>
 		}</label>
 		<input
+			className='ut-input'
 			defaultValue={field}
 			onChange={(e) => {
 				const value = e.target.value
@@ -40,7 +41,7 @@ export function StringField(props: StringField) {
 				}
 			}}
 		/>
-		<span>
+		<span className='ut-btn'>
 			<button
 				style={{
 					marginRight: 5,
