@@ -43,7 +43,7 @@ export function ArrayField(props: ArrayField) {
 		fontSize: 20,
 	}
 
-	return <div className={'array-field'} {...rest}>
+	return <div className={'ut array-field'} {...rest}>
 		<div style={bracketStyle}>{`[`}</div>
 		<div
 			className={'array-field-container'}
