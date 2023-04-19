@@ -65,7 +65,7 @@ export function ObjectField(props: ObjectField) {
 		</label>
 
 		<span
-			className={'object-field-container'}
+			className={'ut-object-field-container'}
 			style={{
 				marginLeft: 10
 			}}>
@@ -111,8 +111,8 @@ export function ObjectField(props: ObjectField) {
 	</React.Fragment>
 
 	return {
-		'block': <div className={'object-field'}  {...rest}>{render()}</div>,
-		'inline': <span className={'object-field'}  {...rest}>{render()}</span>,
+		'block': <div className={'ut-object-field'}  {...rest}>{render()}</div>,
+		'inline': <span className={'ut-object-field'}  {...rest}>{render()}</span>,
 		'empty': render(),
 	}[mode]
 }
